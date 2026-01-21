@@ -1,60 +1,83 @@
-// Smooth internal link scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function (e) {
-    const targetId = this.getAttribute('href').slice(1);
-    if (!targetId) return;
-    const target = document.getElementById(targetId);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({behavior:'smooth', block:'start'});
-      // focus for accessibility
-      setTimeout(()=> target.focus({preventScroll:true}), 600);
-    }
-  });
-});
+// Year
+document.getElementById("year").textContent = new Date().getFullYear();
 
-// Form handling (demo — replace with real backend endpoint)
-const form = document.getElementById('contactForm');
-const formMsg = document.getElementById('formMsg');
+// Mobile menu
+const burger = document.getElementById("burger");
+const mobileNav = document.getElementById("mobileNav");
 
-function validateEmail(email){
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+function setMenu(open) {
+  burger.setAttribute("aria-expanded", String(open));
+  mobileNav.hidden = !open;
 }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formMsg.textContent = '';
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
-  const message = form.message.value.trim();
-
-  if (!name || !email || !message) {
-    formMsg.textContent = 'Please fill in the required fields.';
-    formMsg.style.color = '#FFD2A6';
-    return;
-  }
-  if (!validateEmail(email)){
-    formMsg.textContent = 'Please enter a valid email.';
-    formMsg.style.color = '#FFD2A6';
-    return;
-  }
-
-  // Simulate submission
-  formMsg.textContent = 'Sending…';
-  formMsg.style.color = '#fff';
-  const submitBtn = form.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
-
-  setTimeout(() => {
-    submitBtn.disabled = false;
-    form.reset();
-    formMsg.textContent = 'Thanks! We received your request — we’ll be in touch soon.';
-    formMsg.style.color = '#000';
-    formMsg.style.background = 'var(--accent)';
-    formMsg.style.padding = '0.35rem 0.6rem';
-    formMsg.style.borderRadius = '8px';
-  }, 900);
+burger?.addEventListener("click", () => {
+  const open = burger.getAttribute("aria-expanded") !== "true";
+  setMenu(open);
 });
 
-// Insert current year
-document.getElementById('year').textContent = new Date().getFullYear();
+mobileNav?.addEventListener("click", (e) => {
+  const a = e.target.closest("a");
+  if (a) setMenu(false);
+});
+
+// Smooth scroll for anchor links
+document.addEventListener("click", (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  const id = a.getAttribute("href");
+  if (!id || id === "#") return;
+
+  const target = document.querySelector(id);
+  if (!target) return;
+
+  e.preventDefault();
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// “Play Demo” modal
+const playDemo = document.getElementById("playDemo");
+const demoModal = document.getElementById("demoModal");
+
+function openModal() {
+  demoModal.setAttribute("aria-hidden", "false");
+}
+function closeModal() {
+  demoModal.setAttribute("aria-hidden", "true");
+}
+
+playDemo?.addEventListener("click", openModal);
+
+demoModal?.addEventListener("click", (e) => {
+  if (e.target?.dataset?.close) closeModal();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && demoModal.getAttribute("aria-hidden") === "false") closeModal();
+});
+
+// Contact form (simple validation + fake submit)
+const form = document.getElementById("contactForm");
+const formMsg = document.getElementById("formMsg");
+
+form?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  formMsg.textContent = "";
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  const missing = [];
+  if (!name.value.trim()) missing.push("name");
+  if (!email.value.trim()) missing.push("email");
+  if (!message.value.trim()) missing.push("message");
+
+  if (missing.length) {
+    formMsg.textContent = "Please fill in the required fields.";
+    return;
+  }
+
+  // Simulate success
+  formMsg.textContent = "Thanks! We’ll get back to you shortly.";
+  form.reset();
+});
