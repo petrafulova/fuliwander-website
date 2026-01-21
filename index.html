@@ -53,11 +53,6 @@
 
           <div class="hero-cta">
             <a href="#contact" class="btn btn-primary">Plan my trip</a>
-
-            <button class="play" type="button" id="playDemo" aria-label="Play demo">
-              <span class="play-dot" aria-hidden="true">▶</span>
-              <span class="play-text">Play Demo</span>
-            </button>
           </div>
 
           <ul class="hero-badges">
@@ -71,7 +66,7 @@
           <div class="hero-blob"></div>
 
           <div class="hero-card hero-card-1">
-            <div class="mini-pic"></div>
+            <div class="mini-pic" aria-hidden="true"></div>
             <div>
               <p class="mini-title">Trip to Lisbon</p>
               <p class="mini-sub">7 days • City + coast</p>
@@ -85,9 +80,13 @@
           </div>
 
           <div class="hero-person">
-            <div class="person-placeholder">
-              <span>Hero image</span>
-            </div>
+            <!-- Your real hero image -->
+            <img
+              src="images/hero.jpg"
+              alt="Fuliwander hero travel image"
+              class="hero-image"
+              loading="eager"
+            />
           </div>
         </div>
       </div>
@@ -102,24 +101,45 @@
           <p class="section-sub">Simple — three steps to a perfect itinerary.</p>
         </header>
 
-        <div class="cards cards-3">
-          <article class="card">
-            <div class="icon i1" aria-hidden="true"></div>
-            <h3>1. Tell us your dream</h3>
-            <p>Share preferences, dates and budget — the things that matter.</p>
-          </article>
+        <div classa="cards cards-3">
+          <div class="cards cards-3">
+            <article class="card">
+              <div class="icon-wrap" aria-hidden="true">
+                <!-- Clipboard / plan -->
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                  <path d="M9 5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M9 9h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M9 13h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M8 3h8a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>1. Tell us your dream</h3>
+              <p>Share preferences, dates and budget — the things that matter.</p>
+            </article>
 
-          <article class="card card-pop">
-            <div class="icon i2" aria-hidden="true"></div>
-            <h3>2. We craft your plan</h3>
-            <p>We create a day-by-day itinerary with local tips and options.</p>
-          </article>
+            <article class="card card-pop">
+              <div class="icon-wrap" aria-hidden="true">
+                <!-- Map pin -->
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                  <path d="M12 22s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>2. We craft your plan</h3>
+              <p>We create a day-by-day itinerary with local tips and options.</p>
+            </article>
 
-          <article class="card">
-            <div class="icon i3" aria-hidden="true"></div>
-            <h3>3. Go explore</h3>
-            <p>Use the itinerary, book what you need, and enjoy curated experiences.</p>
-          </article>
+            <article class="card">
+              <div class="icon-wrap" aria-hidden="true">
+                <!-- Sparkle / star -->
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                  <path d="M12 2l2.2 6.7H21l-5.4 3.9L17.8 20 12 15.9 6.2 20l2.2-7.4L3 8.7h6.8L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>3. Go explore</h3>
+              <p>Use the itinerary, book what you need, and enjoy curated experiences.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -138,8 +158,19 @@
             <div class="tile-img img1" aria-hidden="true"></div>
             <div class="tile-body">
               <div class="tile-row">
-                <p class="tile-title">Personalized</p>
-                <p class="tile-price">✨</p>
+                <div class="tile-left">
+                  <span class="tiny-ico" aria-hidden="true">
+                    <!-- wand -->
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                      <path d="M3 21l11-11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M14 10l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M15 3l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M17 1l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M19 3l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <p class="tile-title">Personalized</p>
+                </div>
               </div>
               <p class="tile-sub">Itineraries based on your style, speed and interests.</p>
             </div>
@@ -149,8 +180,16 @@
             <div class="tile-img img2" aria-hidden="true"></div>
             <div class="tile-body">
               <div class="tile-row">
-                <p class="tile-title">Time-saving</p>
-                <p class="tile-price">⏱</p>
+                <div class="tile-left">
+                  <span class="tiny-ico" aria-hidden="true">
+                    <!-- clock -->
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                      <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="2"/>
+                      <path d="M12 7v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <p class="tile-title">Time-saving</p>
+                </div>
               </div>
               <p class="tile-sub">Skip research overload — get a ready-to-use plan.</p>
             </div>
@@ -160,8 +199,16 @@
             <div class="tile-img img3" aria-hidden="true"></div>
             <div class="tile-body">
               <div class="tile-row">
-                <p class="tile-title">Local expertise</p>
-                <p class="tile-price">📍</p>
+                <div class="tile-left">
+                  <span class="tiny-ico" aria-hidden="true">
+                    <!-- compass -->
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                      <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="2"/>
+                      <path d="M14.5 9.5l-1.4 5-5 1.4 1.4-5 5-1.4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <p class="tile-title">Local expertise</p>
+                </div>
               </div>
               <p class="tile-sub">Insider tips and less-crowded alternatives included.</p>
             </div>
@@ -171,8 +218,23 @@
             <div class="tile-img img4" aria-hidden="true"></div>
             <div class="tile-body">
               <div class="tile-row">
-                <p class="tile-title">Flexible</p>
-                <p class="tile-price">🧩</p>
+                <div class="tile-left">
+                  <span class="tiny-ico" aria-hidden="true">
+                    <!-- sliders -->
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                      <path d="M4 21v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M4 10V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M12 21v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M12 8V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M20 21v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M20 12V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M2 14h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M10 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M18 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <p class="tile-title">Flexible</p>
+                </div>
               </div>
               <p class="tile-sub">Options to suit budgets and last-minute changes.</p>
             </div>
@@ -260,22 +322,6 @@
         </p>
       </div>
     </footer>
-
-    <!-- Simple modal for “Play Demo” -->
-    <div class="modal" id="demoModal" aria-hidden="true">
-      <div class="modal-backdrop" data-close="1"></div>
-      <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Demo">
-        <div class="modal-head">
-          <p class="modal-title">Demo</p>
-          <button class="modal-close" type="button" data-close="1" aria-label="Close">✕</button>
-        </div>
-        <div class="modal-body">
-          <p style="margin:0;color:rgba(0,0,0,.65)">
-            Replace this with your video embed or a short walkthrough (e.g., Loom).
-          </p>
-        </div>
-      </div>
-    </div>
   </main>
 
   <script src="script.js"></script>
