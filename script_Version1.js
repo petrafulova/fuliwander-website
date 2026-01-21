@@ -24,6 +24,7 @@ mobileNav?.addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   const a = e.target.closest('a[href^="#"]');
   if (!a) return;
+
   const id = a.getAttribute("href");
   if (!id || id === "#") return;
 
@@ -77,7 +78,6 @@ form?.addEventListener("submit", (e) => {
     return;
   }
 
-  // Simulate success
   formMsg.textContent = "Thanks! We’ll get back to you shortly.";
   form.reset();
 });
