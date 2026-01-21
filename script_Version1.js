@@ -35,27 +35,6 @@ document.addEventListener("click", (e) => {
   target.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-// “Play Demo” modal
-const playDemo = document.getElementById("playDemo");
-const demoModal = document.getElementById("demoModal");
-
-function openModal() {
-  demoModal.setAttribute("aria-hidden", "false");
-}
-function closeModal() {
-  demoModal.setAttribute("aria-hidden", "true");
-}
-
-playDemo?.addEventListener("click", openModal);
-
-demoModal?.addEventListener("click", (e) => {
-  if (e.target?.dataset?.close) closeModal();
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && demoModal.getAttribute("aria-hidden") === "false") closeModal();
-});
-
 // Contact form (simple validation + fake submit)
 const form = document.getElementById("contactForm");
 const formMsg = document.getElementById("formMsg");
