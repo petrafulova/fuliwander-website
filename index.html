@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fuliwander — Travel & Itineraries</title>
+
+  <!-- Modern sans-serif: Inter (optional). Remove if you prefer system fonts. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand" aria-label="Fuliwander">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect width="24" height="24" rx="6" fill="#D5FE9D"/>
+          <path d="M6 15l3-5 3 3 5-6" stroke="#000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">Fuliwander</span>
+      </div>
+      <nav class="nav">
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#benefits" class="nav-link">Benefits</a>
+        <a href="#contact" class="nav-link cta-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Curated trips. Effortless planning.</h1>
+          <p class="lead">Fuliwander crafts personalized itineraries and travel plans so you can explore the world without the planning stress.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Plan my trip</a>
+            <a href="#how" class="btn btn-ghost">How it works</a>
+          </div>
+          <ul class="hero-features">
+            <li>Tailored itineraries</li>
+            <li>Local insights</li>
+            <li>Flexible bookings</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Minimal illustrative SVG -->
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration">
+            <rect width="480" height="360" rx="16" fill="#0b0b0b"/>
+            <g transform="translate(40,40)">
+              <circle cx="170" cy="110" r="90" fill="#D5FE9D" opacity="0.12"/>
+              <path d="M40 200c20-60 110-60 140-30s80 50 120-10" stroke="#D5FE9D" stroke-width="2" fill="none" opacity="0.85"/>
+              <circle cx="60" cy="60" r="8" fill="#D5FE9D"/>
+              <circle cx="220" cy="30" r="6" fill="#D5FE9D"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how container">
+      <h2>How it works</h2>
+      <p class="section-sub">Simple — three steps to a perfect itinerary.</p>
+
+      <div class="steps">
+        <article class="step">
+          <div class="step-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2v6l4 2" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>1. Tell us your dream</h3>
+          <p>Share preferences, dates and budget — the things that matter.</p>
+        </article>
+
+        <article class="step">
+          <div class="step-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2v12" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>2. We craft your plan</h3>
+          <p>We create a day-by-day itinerary with local tips and options.</p>
+        </article>
+
+        <article class="step">
+          <div class="step-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2l2 7h7l-5 4 2 7-6-4-6 4 2-7-5-4h7z" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>3. Go explore</h3>
+          <p>Use the itinerary, book what you need, and enjoy curated experiences.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="benefits" class="benefits container">
+      <h2>Why choose Fuliwander?</h2>
+      <p class="section-sub">Designed for curious travelers who value time and quality.</p>
+
+      <div class="benefits-grid">
+        <div class="benefit">
+          <h4>Personalized</h4>
+          <p>Itineraries based on your style, speed and interests.</p>
+        </div>
+        <div class="benefit">
+          <h4>Time-saving</h4>
+          <p>Skip research overload — get a ready-to-use plan.</p>
+        </div>
+        <div class="benefit">
+          <h4>Local expertise</h4>
+          <p>Insider tips and less-crowded alternatives included.</p>
+        </div>
+        <div class="benefit">
+          <h4>Flexible</h4>
+          <p>Options to suit budgets and last-minute changes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h2>Get started</h2>
+      <p class="section-sub">Tell us a bit about your trip and we'll be in touch.</p>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@domain.com" required>
+        </div>
+
+        <div class="form-row">
+          <label for="destination">Destination (optional)</label>
+          <input id="destination" name="destination" type="text" placeholder="Tokyo, Lisbon, New Zealand">
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us what you'd love to do..." required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send request</button>
+          <div id="formMsg" class="form-msg" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="#" class="footer-link">About</a>
+        <a href="#" class="footer-link">Privacy</a>
+        <a href="#" class="footer-link">Terms</a>
+        <a href="#" class="footer-link">Careers</a>
+      </div>
+      <div class="copyright">
+        &copy; <span id="year"></span> Fuliwander. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
